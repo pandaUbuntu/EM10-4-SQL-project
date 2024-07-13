@@ -18,8 +18,16 @@ namespace WindowsFormsApp6
 
             CityRepository cityRepository = new CityRepository();
 
+            City city = cityRepository.getOne(256);
+
+            
+            cityRepository.update("id", 256, new string[] { "name" }, new string[] { "New vegas" });
+
+            city = cityRepository.getOne(256);
 
             List<City> list = cityRepository.getAll(25, 50);
+
+            //int id = cityRepository.create("Корсунь", "Корсунський", "UKR", 70000);
 
             return;
         }
